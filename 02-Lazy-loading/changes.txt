@@ -1,0 +1,17 @@
+
+
+In App.js, BlogPage removed as it will be rendered and loader also.
+Added loader as a function (import)
+import() as a function will import dynamically only when needed, and the route path will be mentioned
+It gives a promise bcz its a async process, and used then() can also use await and it returns the loaded module
+and then on that calling loader function, which is lazy loading
+Now nest is to load Blog page as well, loader is done above.
+Added lazy function as wapper around the page import bcz import returns a promise its not a valid functional component as it is not returning JSX code
+Here import is not a valid functional component.
+Lazy function take import function as argument.
+
+In BlogPage route, wrapped the element with Suspense which wait for content to be loaded before acctually rendering the content and using fallback prop until component code is there.
+
+Doing similar lazy loading for PostPage
+
+
